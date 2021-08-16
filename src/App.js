@@ -1,35 +1,16 @@
 import React from "react";
-// import Header from "./components/Header";
-// import Section from "./components/Section";
-// import Footer from "./components/Footer";
-// import Timer from "./components/Timer";
-// import DisplayList from "./components/DisplayList";
-// import TaskAssignment from "./components/TaskAssignment";
-// import TaskDisplay from "./components/TaskDisplay";
-// import { useState } from "react";
-// import InventoryTracker from "./components/InventoryTracker";
-import CodingJournal from "./components/CodingJournal";
-import CodingTask from "./components/CodingTask";
+import CodingJournal from "./components/CodingJournal/";
 
 function App() {
-  // const [TaskLog, setTaskLog] = useState([]);
-  // const AddTaskLog = (log) => {
-  //   let Logs = [...TaskLog, log];
-  //   setTaskLog(Logs);
-  // };
-
   return (
-    <div>
-      <CodingJournal />
-      <CodingTask />
-      {/* <Header />
-      <Timer /> */}
-      {/* <InventoryTracker /> */}
-      {/* <DisplayList />
-      <TaskAssignment AddTaskLog={AddTaskLog} />
-      <TaskDisplay List={TaskLog} />
-      <Section />
-      <Footer /> */}
+    <div className="container">
+      <header>
+        <h1>Jaime's Coding Journal</h1>
+      </header>
+      <div className="row">
+        <CodingJournal title="Thoughts for the day" subtitle="Thoughts" />
+        <CodingJournal title="Daily Task" subtitle="Task" />
+      </div>
     </div>
   );
 }

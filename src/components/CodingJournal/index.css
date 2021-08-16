@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  background-color: #f1f1f6;
+}
+h1 {
+  margin-top: 20px;
+  margin-bottom: 6vh;
+  display: flex;
+  justify-content: center;
+  color: #827397;
+  font-size: 4rem;
+}
+h2,
+h3 {
+  color: #827397;
+}
+button {
+  margin-right: 7px;
+}
+textarea {
+  width: 100%;
+  padding: 20px;
+}
+.myJournal {
+  display: flex;
+  justify-content: center;
+}
+.codingForm {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 3px 3px 3px rgba(149, 119, 191, 0.5);
+  overflow: hidden;
+  padding: 25px;
+}
+.myDay {
+  margin-bottom: 20px;
+}
+.myDay1 {
+  margin-bottom: 20px;
+}
