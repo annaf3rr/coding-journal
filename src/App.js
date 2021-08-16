@@ -1,5 +1,6 @@
 import React from "react";
 import CodingJournal from "./components/CodingJournal/";
+import CodingTask from "./components/CodingTask/";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       </header>
       <div className="row">
         <CodingJournal title="Thoughts for the day" subtitle="Thoughts" />
-        <CodingJournal title="Daily Task" subtitle="Task" />
+        <CodingTask title="Daily Task" subtitle="Task" />
       </div>
     </div>
   );

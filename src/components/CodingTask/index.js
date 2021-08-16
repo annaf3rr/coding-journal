@@ -1,31 +1,30 @@
 import React, { useState, useEffect } from "react";
-import "./index.css";
-import TaskCard from "./TaskCard";
+import TaskCard from "../CodingJournal/TaskCard.js";
 
-const retrieveData = localStorage.getItem("journal")
-  ? JSON.parse(localStorage.getItem("journal"))
+const retrieveData = localStorage.getItem("task")
+  ? JSON.parse(localStorage.getItem("task"))
   : [];
 
-function CodingJournal({ title, subtitle }) {
-  const [journal, setJournal] = useState(retrieveData);
+function CodingTask({ title, subtitle }) {
+  const [task, setTask] = useState(retrieveData);
   const [taskDate, setTaskDate] = useState();
   const [taskDescription, setTaskDescription] = useState();
 
-  const saveJournal = () => {
-    setJournal([
-      ...journal,
+  const saveTask = () => {
+    setTask([
+      ...task,
       {
         taskDate,
         taskDescription,
       },
     ]);
   };
-  const clearJournal = () => {
-    setJournal([]);
+  const clearTask = () => {
+    setTask([]);
   };
   useEffect(() => {
-    localStorage.setItem("journal", JSON.stringify(journal));
-  }, [journal]);
+    localStorage.setItem("task", JSON.stringify(task));
+  }, [task]);
 
   return (
     <div className="col-md-6">
@@ -40,13 +39,10 @@ function CodingJournal({ title, subtitle }) {
               />
             </div>
             <div className="d-flex justify-content-end col-md-6">
-              <button className="btn btn-outline-primary" onClick={saveJournal}>
+              <button className="btn btn-outline-primary" onClick={saveTask}>
                 <i className="uil uil-save"></i>SAVE
               </button>
-              <button
-                className="btn btn-outline-secondary"
-                onClick={clearJournal}
-              >
+              <button className="btn btn-outline-secondary" onClick={clearTask}>
                 <i className="uil uil-trash-alt"></i>CLEAR
               </button>
             </div>
@@ -63,8 +59,8 @@ function CodingJournal({ title, subtitle }) {
           <h3>{subtitle}:</h3>
         </div>
 
-        {journal &&
-          journal.map(({ taskDate, taskDescription }) => (
+        {task &&
+          task.map(({ taskDate, taskDescription }) => (
             <TaskCard taskDate={taskDate} taskDescription={taskDescription} />
           ))}
       </div>
@@ -72,4 +68,4 @@ function CodingJournal({ title, subtitle }) {
   );
 }
 
-export default CodingJournal;
+export default CodingTask;
